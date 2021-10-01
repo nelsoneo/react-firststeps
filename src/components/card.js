@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '../components/button';
 
 const Card = ({children, classNameName}) => {
 
@@ -6,11 +7,11 @@ const Card = ({children, classNameName}) => {
 
     function Incrementar(){
         setValue(value + 1); 
-    };
+    }
 
     function Decrementar(){
         setValue(value - 1); 
-    };
+    }
 
     return (
         <div className="card">
@@ -18,26 +19,24 @@ const Card = ({children, classNameName}) => {
                 My first Card
             </div>
             <div className="card-body">
-            <button 
-                type="button" 
-                class="btn btn-success" 
-                onClick = {Incrementar}
-            >
-                Adicionar
-            </button>
-
-            <button 
-                type="button" 
-                class="btn btn-primary"
-                onClick= {Decrementar}
-            >
-                Disminuir
-            </button>
-
+                <Button 
+                    className="btn btn-success"
+                    onClick = {Incrementar}
+                >
+                    Adicionar
+                </Button>
+           
+                <Button 
+                    className="btn btn-primary"
+                    onClick= {Decrementar}
+                >
+                    Disminuir
+                </Button>
+           
             <p>{value}</p>
             </div>
         </div>
     )
-  }
+  };
   
   export default Card;
